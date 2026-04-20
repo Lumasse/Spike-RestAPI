@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -42,7 +42,7 @@ export class ProductController {
     };
   }
 
-  @Patch('/update/:id')
+  @Put('/update/:id')
   async update(
     @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
